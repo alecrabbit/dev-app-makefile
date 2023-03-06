@@ -1,0 +1,68 @@
+#!/usr/bin/env sh
+
+# Disable source following.
+#   shellcheck disable=SC1090,SC1091
+
+command [ -n "${MODULE_LOADED:-}" ] && exit 0
+MODULE_LOADED="LOADED"
+
+# Directories
+__LIB_DIR_NAME="php-dev-helper"
+__core_modules="core"
+__common_modules="common"
+__apps_modules="apps"
+__includers="includers"
+
+# Treat unset variables as an error.
+set -u
+
+# Set core variables
+SCRIPT_DIR=${SCRIPT_DIR:-"$(dirname "$0")"}
+LIB_DIR="${SCRIPT_DIR}/${__LIB_DIR_NAME}"
+COMMON_MODULES_DIR="${LIB_DIR}/${__common_modules}"
+CORE_MODULES_DIR="${LIB_DIR}/${__core_modules}"
+APPS_MODULES_DIR="${LIB_DIR}/${__apps_modules}"
+INCLUDERS_DIR="${LIB_DIR}/${__includers}"
+WORK_DIR="${PWD}"
+
+# Source modules
+. "${INCLUDERS_DIR}/include_core.sh"      # Core modules loader
+. "${INCLUDERS_DIR}/include_common.sh"    # Common modules loader
+
+SCRIPT_DIR="$(core_get_realpath "${SCRIPT_DIR}")"
+LIB_DIR="$(core_get_realpath "${LIB_DIR}")"
+WORK_DIR="$(core_get_realpath "${WORK_DIR}")"
+VERSION_FILE="$(core_get_realpath "${VERSION_FILE}")"
+BUILD_FILE="$(core_get_realpath "${BUILD_FILE}")"
+
+if [ ! "${SCRIPT_NAME}" = "install" ];then
+    if [ "${WORK_DIR}" = "${SCRIPT_DIR}" ];then
+        console_unable "You are in ${SCRIPT_NAME}'s own directory"
+    fi
+fi
+
+console_debug "Script name: ${SCRIPT_NAME}"
+console_debug "Script dir: ${SCRIPT_DIR}"
+console_debug "Lib dir: ${LIB_DIR}"
+console_debug "Work dir: ${WORK_DIR}"
+console_debug "VERSION file: ${VERSION_FILE}"
+console_debug "BUILD file: ${BUILD_FILE}"
+
+SCRIPT_VERSION="$(version_load_version "${VERSION_FILE}")"
+SCRIPT_BUILD="$(version_load_build "${BUILD_FILE}")"
+
+console_debug "Modules loaded"
+
+TERM_TITLE="$(core_get_title_from_file "${WORK_DIR}/TERMINAL_TITLE" "${WORK_DIR}")"
+
+export SCRIPT_VERSION
+export SCRIPT_BUILD
+export COMMON_MODULES_DIR
+export CORE_MODULES_DIR
+export APPS_MODULES_DIR
+export INCLUDERS_DIR
+export TERM_TITLE
+
+console_debug "Loader - Done"
+
+unset __core_modules __common_modules __apps_modules __includers

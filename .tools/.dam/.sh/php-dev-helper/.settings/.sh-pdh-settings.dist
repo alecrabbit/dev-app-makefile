@@ -1,0 +1,14 @@
+### Color settings
+# COLOR=enabled                         # enabled by default
+### Use emojis
+# EMOJIS=enabled                        # enabled by default
+### Can change terminal title
+# TITLE=enabled                         # enabled by default
+### Allow run under root
+# ALLOW_ROOT=disabled                   # disabled by default
+
+### Directory access control (experimental)
+## Allows you to avoid unwanted php-tests run for example in python project dir
+# DIR_CONTROL=disabled                  # disabled by default
+## If DIR_CONTROL is enabled consider project dir name 'php-some-project' as allowed
+# USE_DIR_PREFIX=disabled               # disabled by default
