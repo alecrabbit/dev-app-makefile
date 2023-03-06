@@ -39,7 +39,7 @@ github_download () {
     __to_dir="${1}"
     __package_owner="${2}"
     __package="${3}"
-    __version="${4:-develop}"
+    __version="${4:-dev}"
     __repository="${__package_owner}/${__package}"
     console_debug "Downloading to '${__to_dir}/${__package}-${__version}'"
 

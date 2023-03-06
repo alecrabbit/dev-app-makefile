@@ -6,8 +6,8 @@
 #     └── colored.sh
 # git.sh
 
-export VERSION_DEVELOP="develop"
-export VERSION_MASTER="master"
+export VERSION_DEVELOP="dev"
+export VERSION_MASTER="main"
 
 version_load_version () {
     __file="${1}"
