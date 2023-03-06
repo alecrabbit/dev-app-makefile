@@ -1,4 +1,25 @@
-include ./.dam/make/.core/*
+# Core
+.DEFAULT_GOAL = help
+SHELL=/bin/bash
+
+NOW=$(shell date +"%Y-%m-%dT%H%M%S")
+_PWD_DIR=$(shell pwd)
+_DN_ROOT=.tools
+_DN_DAM=.dam
+_DN_MAKE=.make
+_DN_CORE=.core
+
+_ROOT_DIR=${_PWD_DIR}/${_DN_ROOT}
+_DAM_ROOT=${_ROOT_DIR}/${_DN_DAM}
+_MAKE_ROOT=${_DAM_ROOT}/${_DN_MAKE}
+_CORE_DIR=${_MAKE_ROOT}/${_DN_CORE}
+
+#include ./.tools/.dam/.make/.core/*
+
+# Include core
+ifneq ("$(wildcard $(_CORE_DIR)/*.Makefile)","")
+  include $(wildcard $(_CORE_DIR)/*.Makefile)
+endif
 
 # Include includes if any
 ifneq ("$(wildcard $(_INCLUDE_DIR)/*.Makefile)","")

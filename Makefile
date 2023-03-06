@@ -1,2 +1,4 @@
+
+
 # Include core
-include ./.dam/make/core.Makefile
+include ./.tools/.dam/.make/core.Makefile

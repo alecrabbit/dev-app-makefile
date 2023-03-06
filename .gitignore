@@ -1,2 +1,4 @@
 .idea/
 .env
+.start_time
+docker-stack.yml

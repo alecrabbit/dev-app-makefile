@@ -1,15 +1,8 @@
-# Core
-.DEFAULT_GOAL = help
-SHELL=/bin/bash
-
-NOW=$(shell date +"%Y-%m-%dT%H%M%S")
-_PWD_DIR=$(shell pwd)
-
 # Directories, DO NOT EDIT!
 _DN_INCLUDE=.include
 _DN_DIST=.dist
 _DN_DAM=.dam
-_DN_MAKE=make
+_DN_MAKE=.make
 _DN_CORE=.core
 _DN_BIN=.bin
 _DN_INITS=.inits
@@ -17,18 +10,19 @@ _DN_TIMED=timed
 _DN_TITLE=title
 _DN_DEPRECATED=.deprecated
 _DN_CP=.cp
+_DN_SH=.sh
 _DN_APP=app
 _DN_PROJECT=project
 _DN_TEST=.test
 
-_DAM_ROOT=${_PWD_DIR}/${_DN_DAM}
+_DAM_ROOT=${_ROOT_DIR}/${_DN_DAM}
 _MAKE_ROOT=${_DAM_ROOT}/${_DN_MAKE}
 _BIN_DIR=${_MAKE_ROOT}/${_DN_BIN}
 _TIMED_DIR=${_BIN_DIR}/${_DN_TIMED}
 _TITLE_DIR=${_BIN_DIR}/${_DN_TITLE}
 _DIST_DIR=${_MAKE_ROOT}/${_DN_DIST}
 _CORE_DIR=${_MAKE_ROOT}/${_DN_CORE}
-_PROJECT_DIR=${_MAKE_ROOT}/${_DN_PROJECT}
+_PROJECT_DIR=${_DAM_ROOT}/${_DN_PROJECT}
 _APP_DIR=${_PROJECT_DIR}/${_DN_APP}
 _TEST_DIR=${_DIST_DIR}/${_DN_TEST}
 _DIST_CP_DIR=${_DIST_DIR}/${_DN_CP}
