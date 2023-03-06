@@ -13,8 +13,6 @@ _MAKE_ROOT=${_DAM_ROOT}/${_DN_MAKE}
 _CORE_DIR=${_MAKE_ROOT}/${_DN_CORE}
 _SH_DIR=${_DAM_ROOT}/${_DN_SH}
 
-#include ./.tools/.dam/.make/.core/*
-
 # Include core
 include $(wildcard $(_CORE_DIR)/*.Makefile)
 
