@@ -1,5 +1,3 @@
-.git/ export-ignore
-.gitattributes export-ignore
 .gitattributes.keep export-ignore
 .gitignore export-ignore
 .idea/ export-ignore
