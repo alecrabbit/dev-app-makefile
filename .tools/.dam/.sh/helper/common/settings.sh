@@ -47,8 +47,9 @@ export VERSION_FILE="${LIB_DIR:-.}/VERSION"
 export BUILD_FILE="${LIB_DIR:-.}/BUILD"
 export DEFAULT_SCRIPT_NAME="php-dev-helper"
 
-export PDH_PACKAGE="sh-php-dev-helper"
-export PDH_REPOSITORY="alecrabbit/${PDH_PACKAGE}"
+export PDH_VENDOR="alecrabbit"
+export PDH_PACKAGE="dev-app-makefile"
+export PDH_REPOSITORY="${PDH_VENDOR}/${PDH_PACKAGE}"
 
 _SETTING_ENABLED='enabled'
 _SETTING_DISABLED='disabled'
