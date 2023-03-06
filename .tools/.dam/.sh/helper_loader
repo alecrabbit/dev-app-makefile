@@ -25,19 +25,11 @@ APPS_MODULES_DIR="${LIB_DIR}/${__apps_modules}"
 INCLUDERS_DIR="${LIB_DIR}/${__includers}"
 WORK_DIR="${PWD}"
 
-echo "SCRIPT_DIR: ${SCRIPT_DIR}"
-echo "LIB_DIR: ${LIB_DIR}"
-echo "COMMON_MODULES_DIR: ${COMMON_MODULES_DIR}"
-echo "CORE_MODULES_DIR: ${CORE_MODULES_DIR}"
-echo "APPS_MODULES_DIR: ${APPS_MODULES_DIR}"
-echo "INCLUDERS_DIR: ${INCLUDERS_DIR}"
-echo "WORK_DIR: ${WORK_DIR}"
-
 # Source modules
 . "${INCLUDERS_DIR}/include_core.sh"      # Core modules loader
 . "${INCLUDERS_DIR}/include_common.sh"    # Common modules loader
 
-echo "Successfully loaded modules"
+console_debug "Successfully included modules"
 
 SCRIPT_DIR="$(core_get_realpath "${EXECUTION_DIR}")"
 LIB_DIR="$(core_get_realpath "${LIB_DIR}")"
@@ -55,8 +47,15 @@ console_debug "Script name: ${SCRIPT_NAME}"
 console_debug "Script dir: ${SCRIPT_DIR}"
 console_debug "Lib dir: ${LIB_DIR}"
 console_debug "Work dir: ${WORK_DIR}"
+
+console_debug "Common modules dir: ${COMMON_MODULES_DIR}"
+console_debug "Core modules dir: ${CORE_MODULES_DIR}"
+console_debug "Apps modules dir: ${APPS_MODULES_DIR}"
+console_debug "Includers dir: ${INCLUDERS_DIR}"
+
 console_debug "VERSION file: ${VERSION_FILE}"
 console_debug "BUILD file: ${BUILD_FILE}"
+
 
 SCRIPT_VERSION="$(version_load_version "${VERSION_FILE}")"
 SCRIPT_BUILD="$(version_load_build "${BUILD_FILE}")"
