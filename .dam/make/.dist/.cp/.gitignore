@@ -1,5 +1,0 @@
-*.*
-!.gitignore
-!main.Makefile
-!dist.install.Makefile
-!var.dist.Makefile
