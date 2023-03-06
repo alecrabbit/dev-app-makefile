@@ -10,7 +10,7 @@ _DN_TIMED=timed
 _DN_TITLE=title
 _DN_DEPRECATED=.deprecated
 _DN_CP=.cp
-_DN_SH=.sh
+
 _DN_APP=app
 _DN_PROJECT=project
 _DN_TEST=.test
