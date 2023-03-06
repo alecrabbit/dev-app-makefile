@@ -51,3 +51,27 @@ _docker_generate_stack:
 	@${_ECHO} "\n${_C_INFO} Generating stack file...${_C_STOP}\n";
 	@${_DOCKER_COMP} ${_FILES} config > ${_DC_STACK_FILE}
 	@${_ECHO_OK}
+
+##
+## —— Docker 🐳 ————————————————————————————————————————————————————————————————
+up: _docker_up time_current ## Start the docker hub in detached mode
+
+down: _docker_down time_current ## Stop the docker hub
+
+reload: _docker_down _docker_generate_stack _docker_up _docker_ps time_current ## Recreate stack file, restart the docker hub and show the current status
+
+restart: _docker_down _docker_up time_current ## Restart the docker hub
+
+ps: _docker_ps time_current ## List all running containers
+
+clear: _docker_down_clear cleanup time_current ## Stop the docker hub, remove volumes and cleanup the project
+
+cleanup: _do_project_cleanup ## Do project cleanup
+
+cfg: _docker_config time_current ## Display docker-compose config
+
+logs: _docker_logs ## Show live logs
+
+stack: _docker_config _docker_generate_stack time_current ## Show docker-compose config and Generate docker-compose stack file
+
+build: _docker_pull _docker_build time_current ## Build the docker images
