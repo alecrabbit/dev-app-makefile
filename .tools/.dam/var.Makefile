@@ -7,7 +7,6 @@ endif
 PROJECT_NAME=project.name
 PROJECT_SHORT_TITLE=✨
 
-# DO NOT EDIT! See _VAR_FILE variable
 # Git related variables
 WORKING_BRANCH=dev
 DEFAULT_COMMIT_MESSAGE=~wp
