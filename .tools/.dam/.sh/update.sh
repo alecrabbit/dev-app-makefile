@@ -16,9 +16,10 @@ read_options () {
                 debug_option "${__OPTION}" "${__VALUE}"
                 exit "${CR_TRUE}"
                 ;;
-            -p)
+            -r)
                 debug_option "${__OPTION}" "${__VALUE}"
                 core_check_option_value "${__VALUE}" "${__OPTION}"
+                ROOT_DIRECTORY="${__VALUE}"
                 ;;
             *)
                 common_read_option "update_usage" "${__OPTION}$([ "${__VALUE}" != "" ] && echo "=${__VALUE}")"
