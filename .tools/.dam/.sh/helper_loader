@@ -7,7 +7,7 @@ command [ -n "${MODULE_LOADED:-}" ] && exit 0
 MODULE_LOADED="LOADED"
 
 # Directories
-__LIB_DIR_NAME="php-dev-helper"
+__LIB_DIR_NAME="helper"
 __core_modules="core"
 __common_modules="common"
 __apps_modules="apps"
@@ -17,19 +17,29 @@ __includers="includers"
 set -u
 
 # Set core variables
-SCRIPT_DIR=${SCRIPT_DIR:-"$(dirname "$0")"}
-LIB_DIR="${SCRIPT_DIR}/${__LIB_DIR_NAME}"
+SCRIPT_DIR=${EXECUTION_DIR:-"$(dirname "$0")"}
+LIB_DIR="${EXECUTION_DIR}/${__LIB_DIR_NAME}"
 COMMON_MODULES_DIR="${LIB_DIR}/${__common_modules}"
 CORE_MODULES_DIR="${LIB_DIR}/${__core_modules}"
 APPS_MODULES_DIR="${LIB_DIR}/${__apps_modules}"
 INCLUDERS_DIR="${LIB_DIR}/${__includers}"
 WORK_DIR="${PWD}"
 
+echo "SCRIPT_DIR: ${SCRIPT_DIR}"
+echo "LIB_DIR: ${LIB_DIR}"
+echo "COMMON_MODULES_DIR: ${COMMON_MODULES_DIR}"
+echo "CORE_MODULES_DIR: ${CORE_MODULES_DIR}"
+echo "APPS_MODULES_DIR: ${APPS_MODULES_DIR}"
+echo "INCLUDERS_DIR: ${INCLUDERS_DIR}"
+echo "WORK_DIR: ${WORK_DIR}"
+
 # Source modules
 . "${INCLUDERS_DIR}/include_core.sh"      # Core modules loader
 . "${INCLUDERS_DIR}/include_common.sh"    # Common modules loader
 
-SCRIPT_DIR="$(core_get_realpath "${SCRIPT_DIR}")"
+echo "Successfully loaded modules"
+
+SCRIPT_DIR="$(core_get_realpath "${EXECUTION_DIR}")"
 LIB_DIR="$(core_get_realpath "${LIB_DIR}")"
 WORK_DIR="$(core_get_realpath "${WORK_DIR}")"
 VERSION_FILE="$(core_get_realpath "${VERSION_FILE}")"
