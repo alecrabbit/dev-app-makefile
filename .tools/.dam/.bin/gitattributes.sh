@@ -18,12 +18,12 @@ FILE="$DIRECTORY/.gitattributes"
 # Get the list of files and directories to exclude
 KEEPS=$(awk '{print $1}' "$KEEP_FILE"  | sed 's|^./|/|' | sed 's|^/||')
 # Add .git entry to KEEPS list
-KEEPS="$(echo -e "$KEEPS"'\n.git')"
+KEEPS="$(echo -e "$KEEPS"'\n.git/')"
 
 # Get the list of files and directories to ignore
 IGNORES=$(awk '{print $1}' "$IGNORE_FILE"  | sed 's|^./|/|' | sed 's|^/||')
 # Add .git entry to IGNORES list
-IGNORES="$(echo -e "$IGNORES"'\n.git')"
+IGNORES="$(echo -e "$IGNORES"'\n.git/')"
 
 echo -e "KEEPS:\n${KEEPS[*]}\n"
 echo -e "IGNORES:\n${IGNORES[*]}\n"
