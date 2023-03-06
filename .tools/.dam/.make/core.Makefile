@@ -5,7 +5,7 @@ SHELL=/bin/bash
 NOW=$(shell date +"%Y-%m-%dT%H%M%S")
 _PWD_DIR=$(shell pwd)
 _DN_CORE=.core
-_DN_SH=.sh
+
 
 _ROOT_DIR=${_PWD_DIR}/${_DN_ROOT}
 _DAM_ROOT=${_ROOT_DIR}/${_DN_DAM}

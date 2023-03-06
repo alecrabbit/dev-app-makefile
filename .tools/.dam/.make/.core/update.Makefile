@@ -7,4 +7,4 @@ _update_message:
 	@${_ECHO} "\n${_C_COMMENT} Updating DAM...${_C_STOP}\n";
 
 _update_dam:
-	@${_ECHO_DISABLED};
+	./${_DN_ROOT}/${_DN_DAM}/${_DN_SH}/moomba-dev --upgrade
