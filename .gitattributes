@@ -1,6 +1,6 @@
+.git/ export-ignore
+.gitattributes export-ignore
 .gitattributes.keep export-ignore
 .gitignore export-ignore
-.idea/ export-ignore
 README.md export-ignore
 TERMINAL_TITLE export-ignore
-.tools/ export-ignore
