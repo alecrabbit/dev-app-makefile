@@ -7,8 +7,12 @@ if [ ! -d "${__MAKE_DIR}" ]; then
     shopt -s dotglob && cp -rv ./.tools/.dam/.dist/"${__MAKE_DIR}"/* "${__MAKE_DIR}" && shopt -u dotglob
 fi
 
-# add ignore entry to .gitignore
+# create .gitignore if it doesn't exist
 __GITIGNORE_FILE=".gitignore"
+if [ ! -f "${__GITIGNORE_FILE}" ]; then
+    touch "${__GITIGNORE_FILE}"
+fi
+# add ignore entry to .gitignore
 __IGNORE_ENTRY="/${__MAKE_DIR}/"
 if [[ ! $(cat "${__GITIGNORE_FILE}") =~ ${__IGNORE_ENTRY} ]]; then
     echo "${__IGNORE_ENTRY}" >> "${__GITIGNORE_FILE}"
