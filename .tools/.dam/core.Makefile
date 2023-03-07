@@ -25,14 +25,14 @@ ifneq ("$(wildcard $(_PROJECT_DIR)/project.Makefile)","")
   include $(_PROJECT_DIR)/project.Makefile
 endif
 
-# Include includes if any
-ifneq ("$(wildcard $(_INCLUDE_DIR)/*.Makefile)","")
-  include $(wildcard $(_INCLUDE_DIR)/*.Makefile)
-endif
-
 # Include var if any
 ifneq ("$(wildcard $(_VAR_FILE))","")
   include $(_VAR_FILE)
+endif
+
+# Include includes if any
+ifneq ("$(wildcard $(_INCLUDE_DIR)/*.Makefile)","")
+  include $(wildcard $(_INCLUDE_DIR)/*.Makefile)
 endif
 
 # Include tests if any
