@@ -14,6 +14,13 @@ if [[ ! $(cat "${__GITIGNORE_FILE}") =~ ${__IGNORE_ENTRY} ]]; then
     echo "${__IGNORE_ENTRY}" >> "${__GITIGNORE_FILE}"
 fi
 
+# mv file dam.LICENSE to .tools/.dam directory
+__LICENSE_FILE="dam.LICENSE"
+__LICENSE_DEST=".tools/.dam"
+if [ -f "${__LICENSE_FILE}" ]; then
+    mv -fv "${__LICENSE_FILE}" "${__LICENSE_DEST}"
+fi
+
 # delete this file
 echo "Deleting ${0}"
 rm -v "${0}"
