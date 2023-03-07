@@ -2,6 +2,7 @@ git_ignore_fix:
 	git rm -r --cached .
 	git add .
 	git commit -m ".gitignore fix"
+	@${_ECHO} "\n${_C_SELECT} ${PROJECT_NAME} ${_C_STOP} ${_C_INFO} .gitignore fix applied${_C_STOP}\n";
 
 git_add_all:
 	git add -A
