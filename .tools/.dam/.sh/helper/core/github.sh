@@ -7,7 +7,7 @@
 _MAIN_BRANCH=${VERSION_MASTER:-"main"}
 _DEV_BRANCH=${VERSION_DEVELOP:-"dev"}
 
-__api_url="https://api.github.com/repos"
+__api_url="https://api.github.com/repos/"
 
 github_get_latest_release() {
     __body="$(curl --silent "https://api.github.com/repos/${1}/releases/latest")"   # Get latest release from GitHub api
@@ -44,6 +44,7 @@ get_short_commit_id () {
         __commit_url="${__api_url}${__repository}/commits/${__version}"
     fi
     __result="$(curl -s -H "Accept: application/vnd.github.v3+json" "${__commit_url}")"
+    console_debug "${__commit_url}"
     console_debug "${__result}"
     short_commit_id=$(echo "${__result}" | grep -Po '(?<="sha": ")[a-f0-9]+' | head -n 1 | cut -c 1-8)
     echo "${short_commit_id}"
