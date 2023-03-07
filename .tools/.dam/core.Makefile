@@ -33,10 +33,6 @@ endif
 # Include project if any
 ifneq ("$(wildcard $(_PROJECT_DIR)/project.Makefile)","")
   include $(_PROJECT_DIR)/project.Makefile
-  else
-	ifneq ("$(wildcard $(_PROJECT_DIR_DIST)/project.Makefile)","")
-	  include $(_PROJECT_DIR_DIST)/project.Makefile
-	endif
 endif
 
 # Include var if any

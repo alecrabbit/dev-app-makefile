@@ -6,7 +6,7 @@ _dist_test: _dt_message _dt_dist_test ## Run distribution test
 _dt_message:
 	@${_ECHO} "\n ${_C_COMMENT} DISTRIBUTION TEST... ${_C_STOP}\n";
 
-_dt_dist_test: _dt_echo_variables _dt_color_check _dt_user _dt_include_dir
+_dt_dist_test: _dt_echo_variables _dt_color_check _dt_user _dt_wildcard_files
 	@${_ECHO};
 	@${_ECHO_DONE};
 
@@ -42,7 +42,13 @@ _dt_user:
 	@${_ECHO} "USER_NAME  = ${USER_NAME}"
 	@${_ECHO} "GROUP_NAME = ${GROUP_NAME}"
 
-_dt_include_dir:
+_dt_wildcard_files:
 	@${_ECHO} "\n${_C_COMMENT}Include directory: ${_C_STOP}";
 	@${_ECHO} "Wildcard: $(_INCLUDE_DIR)/*.Makefile)";
 	@${_ECHO} "$(wildcard $(_INCLUDE_DIR)/*.Makefile)";
+	@${_ECHO} "\n${_C_COMMENT}Project directory: ${_C_STOP}";
+	@${_ECHO} "Wildcard: $(_PROJECT_DIR)/*.Makefile)";
+	@${_ECHO} "$(wildcard $(_PROJECT_DIR)/*.Makefile)";
+	@${_ECHO} "\n${_C_COMMENT}Project dist directory: ${_C_STOP}";
+	@${_ECHO} "Wildcard: $(_PROJECT_DIR_DIST)/*.Makefile)";
+	@${_ECHO} "$(wildcard $(_PROJECT_DIR_DIST)/*.Makefile)";
