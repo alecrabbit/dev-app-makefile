@@ -1,5 +1,6 @@
 # Docker related targets
 _docker_init: _docker_down_clear _docker_generate_stack _docker_pull _docker_build
+	@${_NO_OP};
 
 _docker_down:
 	@${_ECHO} "\n${_C_WARNING} Stopping containers...${_C_STOP}\n";
