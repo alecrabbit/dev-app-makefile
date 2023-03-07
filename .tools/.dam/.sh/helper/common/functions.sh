@@ -122,7 +122,7 @@ __updater_install () {
         __build=$(get_short_commit_id "${__repository}" "${__version}")
         console_debug "Build ${__build}"
         # shellcheck disable=SC2116
-        console_debug "Writing new build\n$(echo "${__build}" > "${BUILD_FILE}" 2>&1)"
+        console_debug "Writing new build ${__build} to file ${BUILD_FILE}$(echo "${__build}" > "${BUILD_FILE}" 2>&1)"
         console_comment "Installing package"
         console_debug "Deleting dev module '${PTS_AUX_DEV_MODULE}'\n$(rm -v "${__dir}/${__package}-${__version}/${PTS_AUX_DEV_MODULE}" 2>&1)"
         console_debug "Copying new files to '${__dest_dir}'\n$(cp -rv "${__dir}/${__package}-${__version}"/. "${__dest_dir}"/. 2>&1)"
