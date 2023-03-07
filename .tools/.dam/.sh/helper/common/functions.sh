@@ -86,7 +86,6 @@ _pts_upgrade_run () {
             __updater_install "${HOME}/${PTS_UPDATER_TMP_DIR}" "${PDH_REPOSITORY}" "${PDH_PACKAGE}" "${__REQUIRED_VERSION}" "${ROOT_DIR}"
         else
             console_comment "You are already using this version: ${SCRIPT_VERSION}"
-            return "${CR_FALSE}"
         fi
         unset __REQUIRED_VERSION _LATEST_VERSION 
         return "${CR_TRUE}"
@@ -102,12 +101,10 @@ _pts_upgrade_run () {
         console_info "New version found: ${_LATEST_VERSION}"
         console_info "Updating..."
         __updater_install "${HOME}/${PTS_UPDATER_TMP_DIR}" "${PDH_REPOSITORY}" "${PDH_PACKAGE}" "${_LATEST_VERSION}" "${ROOT_DIR}"
-        unset __REQUIRED_VERSION _LATEST_VERSION
-        return "${CR_TRUE}"
     else
         console_info "You are using latest version: ${SCRIPT_VERSION}"
-        return "${CR_FALSE}"
     fi
+    unset __REQUIRED_VERSION _LATEST_VERSION
 }
 
 __updater_install () {
