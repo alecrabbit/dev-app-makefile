@@ -56,6 +56,7 @@ common_read_option () {
                     console_error "Upgrade failed"
                     exit "${CR_ERROR}"
                 fi
+                console_comment "Upgrade completed"
                 exit
                 ;;
             -V | --version)
