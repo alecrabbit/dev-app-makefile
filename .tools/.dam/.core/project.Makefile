@@ -22,8 +22,16 @@ _project_install: _project_install_message _do_project_install
 _project_install_message:
 	@${_ECHO} "\n${_C_SELECT} ${PROJECT_NAME} ${_C_STOP} ${_C_INFO} Project installation...${_C_STOP}\n";
 
+##
+## —— Project 🚧 ———————————————————————————————————————————————————————————————
+init: _initialize ## Initialize project and start docker hub
+	@${_ECHO};
+
+chown: ## Change the owner(user) of the project
+	sudo chown -R ${USER_ID}:${GROUP_ID} .
+
 release: _release_message _do_release changelog ## Prepare for release
-	@${_ECHO} "";
+	@${_ECHO};
 
 _release_message:
 	@${_ECHO} "\n${_C_SELECT} ${PROJECT_NAME} ${_C_STOP} ${_C_INFO}Preparing for release...${_C_STOP}\n";
