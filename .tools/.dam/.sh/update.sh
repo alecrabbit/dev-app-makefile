@@ -1,6 +1,9 @@
 #!/usr/bin/env sh
 
 EXECUTION_DIR="$( cd "$( dirname "$0" )" && pwd )"
+ROOT_DIR="$( cd "../../$( dirname "${EXECUTION_DIR}" )" && pwd )"
+export ROOT_DIR
+export EXECUTION_DIR
 . "$EXECUTION_DIR/helper_loader"
 
 console_debug "Executing..."
@@ -39,4 +42,4 @@ update_usage () {
 
 read_options "$@"
 
-export ROOT_DIR
+

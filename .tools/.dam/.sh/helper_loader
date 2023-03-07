@@ -53,7 +53,6 @@ console_debug "Common modules dir: ${COMMON_MODULES_DIR}"
 console_debug "Core modules dir: ${CORE_MODULES_DIR}"
 console_debug "Apps modules dir: ${APPS_MODULES_DIR}"
 console_debug "Includers dir: ${INCLUDERS_DIR}"
-console_debug "Root dir: ${ROOT_DIR}"
 
 console_debug "VERSION file: ${VERSION_FILE}"
 console_debug "BUILD file: ${BUILD_FILE}"
