@@ -108,6 +108,7 @@ _pts_upgrade_run () {
         console_info "You are using latest version: ${SCRIPT_VERSION}"
         return "${CR_FALSE}"
     fi
+    return "${CR_FALSE}"
 }
 
 __updater_install () {
