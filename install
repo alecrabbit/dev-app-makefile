@@ -9,7 +9,7 @@ fi
 
 # add ignore entry to .gitignore
 __GITIGNORE_FILE=".gitignore"
-__IGNORE_ENTRY="${__MAKE_DIR}"
+__IGNORE_ENTRY="/${__MAKE_DIR}/"
 if [[ ! $(cat "${__GITIGNORE_FILE}") =~ ${__IGNORE_ENTRY} ]]; then
     echo "${__IGNORE_ENTRY}" >> "${__GITIGNORE_FILE}"
 fi
