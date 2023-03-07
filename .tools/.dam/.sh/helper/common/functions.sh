@@ -87,7 +87,7 @@ _pts_upgrade_run () {
             unset __REQUIRED_VERSION _LATEST_VERSION
             return "${CR_TRUE}"
         else
-            console_comment "You are already using this version: ${SCRIPT_VERSION}"
+            echo "You are already using this version: ${SCRIPT_VERSION}"
             return "${CR_FALSE}"
         fi
     fi
@@ -105,7 +105,7 @@ _pts_upgrade_run () {
         unset __REQUIRED_VERSION _LATEST_VERSION
         return "${CR_TRUE}"
     else
-        console_info "You are using latest version: ${SCRIPT_VERSION}"
+        echo "You are using latest version: ${SCRIPT_VERSION}"
         return "${CR_FALSE}"
     fi
     return "${CR_FALSE}"
