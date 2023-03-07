@@ -5,12 +5,13 @@ SHELL=/bin/bash
 NOW=$(shell date +"%Y-%m-%dT%H%M%S")
 _PWD_DIR=$(shell pwd)
 _DN_CORE=.core
-
+# Makefiles directory
+_DN_MAKE=.make
 
 _ROOT_DIR=${_PWD_DIR}/${_DN_ROOT}
 _DAM_ROOT=${_ROOT_DIR}/${_DN_DAM}
-_MAKE_ROOT=${_DAM_ROOT}/${_DN_MAKE}
-_CORE_DIR=${_MAKE_ROOT}/${_DN_CORE}
+_MAKE_ROOT=${_ROOT_DIR}/${_DN_MAKE}
+_CORE_DIR=${_DAM_ROOT}/${_DN_CORE}
 _SH_DIR=${_DAM_ROOT}/${_DN_SH}
 
 # Include core
@@ -29,6 +30,10 @@ endif
 # Include project if any
 ifneq ("$(wildcard $(_PROJECT_DIR)/project.Makefile)","")
   include $(_PROJECT_DIR)/project.Makefile
+#  else
+#	ifneq ("$(wildcard $(_PROJECT_DIR_DIST)/project.Makefile)","")
+#	  include $(_PROJECT_DIR_DIST)/project.Makefile
+#	endif
 endif
 
 # Include var if any
