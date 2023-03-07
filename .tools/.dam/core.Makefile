@@ -5,12 +5,16 @@ SHELL=/bin/bash
 NOW=$(shell date +"%Y-%m-%dT%H%M%S")
 _PWD_DIR=$(shell pwd)
 _DN_CORE=.core
+# Makefiles directory
+_DN_MAKE=.make
+# Shell scripts directory
+_DN_SH=.sh
 
-
-_ROOT_DIR=${_PWD_DIR}/${_DN_ROOT}
-_DAM_ROOT=${_ROOT_DIR}/${_DN_DAM}
-_MAKE_ROOT=${_DAM_ROOT}/${_DN_MAKE}
-_CORE_DIR=${_MAKE_ROOT}/${_DN_CORE}
+_ROOT_DIR=${_PWD_DIR}
+_TOOLS_DIR=${_ROOT_DIR}/${_DN_TOOLS}
+_DAM_ROOT=${_TOOLS_DIR}/${_DN_DAM}
+_MAKE_ROOT=${_ROOT_DIR}/${_DN_MAKE}
+_CORE_DIR=${_DAM_ROOT}/${_DN_CORE}
 _SH_DIR=${_DAM_ROOT}/${_DN_SH}
 
 # Include core

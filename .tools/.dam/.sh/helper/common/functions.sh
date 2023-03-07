@@ -104,7 +104,7 @@ _pts_upgrade_run () {
     else
         console_info "You are using latest version: ${SCRIPT_VERSION}"
     fi
-    unset __REQUIRED_VERSION _LATEST_VERSION 
+    unset __REQUIRED_VERSION _LATEST_VERSION
 }
 
 __updater_install () {

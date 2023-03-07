@@ -15,3 +15,10 @@ wget -qO- "https://github.com/alecrabbit/dev-app-makefile/archive/refs/heads/mai
 | tar -xz && shopt -s dotglob && cp -rv dev-app-makefile-main/* . \
 && shopt -u dotglob && rm -r dev-app-makefile-main && ./install
 ```
+
+```bash
+wget -qO- "https://github.com/alecrabbit/dev-app-makefile/archive/refs/heads/dev.tar.gz" \
+| tar -xz && shopt -s dotglob && cp -rv dev-app-makefile-dev/* . \
+&& shopt -u dotglob && rm -r dev-app-makefile-dev && ./install
+```
+
