@@ -120,7 +120,6 @@ __updater_install () {
     then
         console_debug "Download complete"
         __build=$(get_short_commit_id "${__repository}" "${__version}")
-        console_debug "Build ${__build}"
         # shellcheck disable=SC2116
         console_debug "Writing new build ${__build} to file ${BUILD_FILE}$(echo "${__build}" > "${BUILD_FILE}" 2>&1)"
         console_print "${SCRIPT_VERSION}$(colored_dark "@${SCRIPT_BUILD}") -> ${EMOJI_NEW}${__version}$(colored_dark "@$(cat "${BUILD_FILE}")")"
