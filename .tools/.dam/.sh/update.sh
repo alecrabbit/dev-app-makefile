@@ -4,7 +4,7 @@ EXECUTION_DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 ROOT_DIR="$( cd "$( dirname "$( dirname "$( dirname "$EXECUTION_DIR" )" )" )" && pwd )"
 
-echo "Root dir: '${ROOT_DIR}'"
+#echo "Root dir: '${ROOT_DIR}'"
 
 export ROOT_DIR
 export EXECUTION_DIR
