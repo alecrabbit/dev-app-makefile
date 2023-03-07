@@ -53,7 +53,7 @@ common_read_option () {
                 fi
                 debug_option "${__OPTION}" "${__VALUE}"
                 __result="$(_pts_upgrade_run "${__VALUE}")"
-                console_debug "Upgrade result: $(core_bool_to_string "${__result}")"
+                console_debug "Upgrade result: '$(core_bool_to_string "${__result}")'"
                 exit
                 ;;
             -V | --version)
