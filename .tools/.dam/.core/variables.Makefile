@@ -31,7 +31,7 @@ _INCLUDE_DIR=${_MAKE_ROOT}/${_DN_INCLUDE}
 _UNINSTALL_DIR=${_DEPRECATED_DIR}/uninstall.${NOW}
 _INITS_DIR=${_DAM_ROOT}/${_DN_INITS}
 _DEPRECATED_DIR=${_INITS_DIR}/${_DN_DEPRECATED}
-_VAR_FILE_DIR=${_DAM_ROOT}
+_VAR_FILE_DIR=${_MAKE_ROOT}
 
 # Executables (local)
 _DOCKER = $(shell command -v docker 2> /dev/null)
