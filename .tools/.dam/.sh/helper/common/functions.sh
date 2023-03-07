@@ -103,6 +103,7 @@ _pts_upgrade_run () {
         __updater_install "${HOME}/${PTS_UPDATER_TMP_DIR}" "${PDH_REPOSITORY}" "${PDH_PACKAGE}" "${_LATEST_VERSION}" "${ROOT_DIR}"
     else
         console_info "You are using latest version: ${SCRIPT_VERSION}"
+        return "${CR_FALSE}"
     fi
     unset __REQUIRED_VERSION _LATEST_VERSION 
 }
