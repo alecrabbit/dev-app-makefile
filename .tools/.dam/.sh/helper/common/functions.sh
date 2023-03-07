@@ -118,22 +118,15 @@ __updater_install () {
     
     if updater_download "${__dir}" "${__repository}" "${__package}" "${__version}"
     then
-        console_debug "Download complete"
         __build=$(get_short_commit_id "${__repository}" "${__version}")
+        console_debug "Download complete"
         # shellcheck disable=SC2116
         console_debug "Writing new build ${__build} to file ${BUILD_FILE}$(echo "${__build}" > "${BUILD_FILE}" 2>&1)"
-        console_print "${SCRIPT_VERSION}$(colored_dark "@${SCRIPT_BUILD}") -> ${EMOJI_NEW}${__version}$(colored_dark "@$(cat "${BUILD_FILE}")")"
-
         console_comment "Installing package"
         console_debug "Deleting dev module '${PTS_AUX_DEV_MODULE}'\n$(rm -v "${__dir}/${__package}-${__version}/${PTS_AUX_DEV_MODULE}" 2>&1)"
         console_debug "Copying new files to '${__dest_dir}'\n$(cp -rv "${__dir}/${__package}-${__version}"/. "${__dest_dir}"/. 2>&1)"
-        console_debug "Renaming\n$(mv -v "${__dest_dir}/php-tests-dev" "${__dest_dir}/php-tests" 2>&1)"
-        console_debug "Renaming\n$(mv -v "${__dest_dir}/moomba-dev" "${__dest_dir}/moomba" 2>&1)"
-        console_debug "Renaming\n$(mv -v "${__dest_dir}/build-image-dev" "${__dest_dir}/build-image" 2>&1)"
-        
-        console_debug "Writing new version ${__version} > ${VERSION_FILE}"
         # shellcheck disable=SC2116
-        console_debug "Writing new version\n$(echo "${__version}" > "${VERSION_FILE}" 2>&1)"
+        console_debug "Writing new version ${__version} to file ${VERSION_FILE}$(echo "${__version}" > "${VERSION_FILE}" 2>&1)"
         console_debug "Cleanup '${__dir}'\n$(rm -rfv "${__dir}" 2>&1)"
         console_print "${SCRIPT_VERSION}$(colored_dark "@${SCRIPT_BUILD}") -> ${EMOJI_NEW}${__version}$(colored_dark "@$(cat "${BUILD_FILE}")")"
         console_info "Update complete"
