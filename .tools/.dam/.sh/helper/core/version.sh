@@ -34,9 +34,9 @@ version_load_build () {
 }
 
 version_string () {
+    __show_build="${1:-${CR_FALSE}}"
     SCRIPT_BUILD=${SCRIPT_BUILD:-}
     SCRIPT_VERSION="${SCRIPT_VERSION:-${VERSION_DEVELOP}}"
-    __show_build="${1:-${CR_FALSE}}"
     if [ "${SCRIPT_VERSION}" = "${VERSION_DEVELOP}" ] || [ "${SCRIPT_VERSION}" = "${VERSION_MASTER}" ] || [ "${__show_build}" = "${CR_TRUE}" ]; then
         if [ "${SCRIPT_BUILD}" != "" ]
         then
