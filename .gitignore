@@ -1,5 +1,6 @@
 /.idea/
 /.eval/
+/.make/
 .env
 .start_time
 docker-stack.yml
