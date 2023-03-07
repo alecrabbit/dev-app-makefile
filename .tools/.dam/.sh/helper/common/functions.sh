@@ -114,6 +114,8 @@ __updater_install () {
     __version="${4}"
     __dest_dir="${5:-${SCRIPT_DIR}}"
     console_info "Destination dir: ${__dest_dir}"
+    console_debug "Repository: ${__repository}"
+    
     if updater_download "${__dir}" "${__repository}" "${__package}" "${__version}"
     then
         console_comment "Installing package"
