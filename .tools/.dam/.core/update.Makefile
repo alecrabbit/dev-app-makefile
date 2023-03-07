@@ -8,4 +8,4 @@ _do_dam_update_message:
 
 _do_dam_update:
 	@$(eval c ?=)
-	DEBUG=1 ./${_DN_ROOT}/${_DN_DAM}/${_DN_SH}/update.sh --debug --upgrade=$(c)
+	DEBUG=1 ./${_SH_DIR}/update.sh --debug --upgrade=$(c)
