@@ -13,12 +13,12 @@ wget -qO- "https://github.com/alecrabbit/dev-app-makefile/archive/refs/tags/0.0.
 ```bash
 wget -qO- "https://github.com/alecrabbit/dev-app-makefile/archive/refs/heads/main.tar.gz" \
 | tar -xz && shopt -s dotglob && cp -rv dev-app-makefile-main/* . \
-&& shopt -u dotglob && rm -r dev-app-makefile-main && ./install && make dam_update c=main
+&& shopt -u dotglob && rm -r dev-app-makefile-main && ./install && make upgrade c=main
 ```
 
 ```bash
 wget -qO- "https://github.com/alecrabbit/dev-app-makefile/archive/refs/heads/dev.tar.gz" \
 | tar -xz && shopt -s dotglob && cp -rv dev-app-makefile-dev/* . \
-&& shopt -u dotglob && rm -r dev-app-makefile-dev && ./install && make dam_update c=dev
+&& shopt -u dotglob && rm -r dev-app-makefile-dev && ./install && make upgrade c=dev
 ```
 
