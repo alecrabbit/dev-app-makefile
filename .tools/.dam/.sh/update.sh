@@ -19,7 +19,7 @@ read_options () {
             -r)
                 debug_option "${__OPTION}" "${__VALUE}"
                 core_check_option_value "${__VALUE}" "${__OPTION}"
-                ROOT_DIRECTORY="${__VALUE}"
+                ROOT_DIR="${__VALUE}"
                 ;;
             *)
                 common_read_option "update_usage" "${__OPTION}$([ "${__VALUE}" != "" ] && echo "=${__VALUE}")"
@@ -38,3 +38,5 @@ update_usage () {
 }
 
 read_options "$@"
+
+export ROOT_DIR

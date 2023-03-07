@@ -24,6 +24,7 @@ CORE_MODULES_DIR="${LIB_DIR}/${__core_modules}"
 APPS_MODULES_DIR="${LIB_DIR}/${__apps_modules}"
 INCLUDERS_DIR="${LIB_DIR}/${__includers}"
 WORK_DIR="${PWD}"
+ROOT_DIR="${EXECUTION_DIR}"
 
 # Source modules
 . "${INCLUDERS_DIR}/include_core.sh"      # Core modules loader
@@ -52,6 +53,7 @@ console_debug "Common modules dir: ${COMMON_MODULES_DIR}"
 console_debug "Core modules dir: ${CORE_MODULES_DIR}"
 console_debug "Apps modules dir: ${APPS_MODULES_DIR}"
 console_debug "Includers dir: ${INCLUDERS_DIR}"
+console_debug "Root dir: ${ROOT_DIR}"
 
 console_debug "VERSION file: ${VERSION_FILE}"
 console_debug "BUILD file: ${BUILD_FILE}"
@@ -71,6 +73,7 @@ export CORE_MODULES_DIR
 export APPS_MODULES_DIR
 export INCLUDERS_DIR
 export TERM_TITLE
+export ROOT_DIR
 
 console_debug "Loader - Done"
 

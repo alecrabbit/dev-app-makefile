@@ -83,7 +83,7 @@ _pts_upgrade_run () {
         || [ "${__REQUIRED_VERSION}" = "${VERSION_MASTER}"  ] \
         || [ "${__REQUIRED_VERSION}" = "${VERSION_DEVELOP}"  ]; then
             console_comment "User required version: ${__REQUIRED_VERSION}"
-            __updater_install "${HOME}/${PTS_UPDATER_TMP_DIR}" "${PDH_REPOSITORY}" "${PDH_PACKAGE}" "${__REQUIRED_VERSION}"
+            __updater_install "${HOME}/${PTS_UPDATER_TMP_DIR}" "${PDH_REPOSITORY}" "${PDH_PACKAGE}" "${__REQUIRED_VERSION}" "${ROOT_DIR}"
         else
             console_comment "You are already using this version: ${SCRIPT_VERSION}"
         fi
@@ -100,7 +100,7 @@ _pts_upgrade_run () {
         console_comment "Current version: ${SCRIPT_VERSION}"
         console_info "New version found: ${_LATEST_VERSION}"
         console_info "Updating..."
-        __updater_install "${HOME}/${PTS_UPDATER_TMP_DIR}" "${PDH_REPOSITORY}" "${PDH_PACKAGE}" "${_LATEST_VERSION}"
+        __updater_install "${HOME}/${PTS_UPDATER_TMP_DIR}" "${PDH_REPOSITORY}" "${PDH_PACKAGE}" "${_LATEST_VERSION}" "${ROOT_DIR}"
     else
         console_info "You are using latest version: ${SCRIPT_VERSION}"
     fi
@@ -113,6 +113,7 @@ __updater_install () {
     __package="${3}"
     __version="${4}"
     __dest_dir="${5:-${SCRIPT_DIR}}"
+    console_info "Destination dir: ${__dest_dir}"
     if updater_download "${__dir}" "${__repository}" "${__package}" "${__version}"
     then
         console_comment "Installing package"
