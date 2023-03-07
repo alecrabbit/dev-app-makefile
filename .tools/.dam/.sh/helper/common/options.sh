@@ -52,7 +52,11 @@ common_read_option () {
                     console_fatal "Option is not applicable"
                 fi
                 debug_option "${__OPTION}" "${__VALUE}"
-                console_debug "$(_pts_upgrade_run "${__VALUE}")"
+                __result=$(_pts_upgrade_run "${__VALUE}")
+                if [ $? -ne "${CR_TRUE}" ];then
+                    console_debug "Upgrade result: '$(core_bool_to_string "${__result}")'"
+                    console_fatal "See error message above"
+                fi
                 exit
                 ;;
             -V | --version)
