@@ -112,14 +112,15 @@ __updater_install () {
     __repository="${2}"
     __package="${3}"
     __version="${4}"
+    __dest_dir="${5:-${SCRIPT_DIR}}"
     if updater_download "${__dir}" "${__repository}" "${__package}" "${__version}"
     then
         console_comment "Installing package"
         console_debug "Deleting dev module '${PTS_AUX_DEV_MODULE}'\n$(rm -v "${__dir}/${__package}-${__version}/${PTS_AUX_DEV_MODULE}" 2>&1)"
-        console_debug "Copying new files to '${SCRIPT_DIR}'\n$(cp -rv "${__dir}/${__package}-${__version}"/. "${SCRIPT_DIR}"/. 2>&1)"
-        console_debug "Renaming\n$(mv -v "${SCRIPT_DIR}/php-tests-dev" "${SCRIPT_DIR}/php-tests" 2>&1)"
-        console_debug "Renaming\n$(mv -v "${SCRIPT_DIR}/moomba-dev" "${SCRIPT_DIR}/moomba" 2>&1)"
-        console_debug "Renaming\n$(mv -v "${SCRIPT_DIR}/build-image-dev" "${SCRIPT_DIR}/build-image" 2>&1)"
+        console_debug "Copying new files to '${__dest_dir}'\n$(cp -rv "${__dir}/${__package}-${__version}"/. "${__dest_dir}"/. 2>&1)"
+        console_debug "Renaming\n$(mv -v "${__dest_dir}/php-tests-dev" "${__dest_dir}/php-tests" 2>&1)"
+        console_debug "Renaming\n$(mv -v "${__dest_dir}/moomba-dev" "${__dest_dir}/moomba" 2>&1)"
+        console_debug "Renaming\n$(mv -v "${__dest_dir}/build-image-dev" "${__dest_dir}/build-image" 2>&1)"
         
         console_debug "Writing new version ${__version} > ${VERSION_FILE}"
         # shellcheck disable=SC2116
