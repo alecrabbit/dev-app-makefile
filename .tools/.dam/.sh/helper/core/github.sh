@@ -7,7 +7,7 @@
 _MAIN_BRANCH=${VERSION_MASTER:-"main"}
 _DEV_BRANCH=${VERSION_DEVELOP:-"dev"}
 
-__api_url="https://api.github.com/repos"
+__api_url="https://api.github.com/repos/"
 
 github_get_latest_release() {
     __body="$(curl --silent "https://api.github.com/repos/${1}/releases/latest")"   # Get latest release from GitHub api
