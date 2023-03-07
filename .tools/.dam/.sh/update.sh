@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 EXECUTION_DIR="$( cd "$( dirname "$0" )" && pwd )"
-ROOT_DIR="$( cd "$( dirname "$( dirname "$EXECUTION_DIR" )" )" && pwd )"
+ROOT_DIR="$( cd "$( dirname"$( dirname "$( dirname "$EXECUTION_DIR" )" )" )" && pwd )"
 
 echo "ROOT_DIR: ${ROOT_DIR}"
 
