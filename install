@@ -1,28 +1,37 @@
 #!/usr/bin/env bash
 
 __MAKE_DIR=".make"
+__DAM_DIR=".tools/.dam"
+__LICENSE_FILE="dam.LICENSE"
+__GITIGNORE_FILE=".gitignore"
+__VAR_MAKEFILE="var.Makefile"
+__VAR_MAKEFILE_SRC="${__DAM_DIR}/${__VAR_MAKEFILE}"
+__VAR_MAKEFILE_DEST="${__MAKE_DIR}/${__VAR_MAKEFILE}"
 
 if [ ! -d "${__MAKE_DIR}" ]; then
     mkdir "${__MAKE_DIR}"
     shopt -s dotglob && cp -rv ./.tools/.dam/.dist/"${__MAKE_DIR}"/* "${__MAKE_DIR}" && shopt -u dotglob
 fi
 
-## create .gitignore if it doesn't exist
-#__GITIGNORE_FILE=".gitignore"
-#if [ ! -f "${__GITIGNORE_FILE}" ]; then
-#    touch "${__GITIGNORE_FILE}"
-#fi
-## add ignore entry to .gitignore
-#__IGNORE_ENTRY="/${__MAKE_DIR}/"
-#if [[ ! $(cat "${__GITIGNORE_FILE}") =~ ${__IGNORE_ENTRY} ]]; then
-#    echo "${__IGNORE_ENTRY}" >> "${__GITIGNORE_FILE}"
-#fi
+# create .gitignore if it doesn't exist
+if [ ! -f "${__GITIGNORE_FILE}" ]; then
+    touch "${__GITIGNORE_FILE}"
+fi
+# add ignore entry to .gitignore
+__IGNORE_ENTRY="/${__DAM_DIR}/"
+if [[ ! $(cat "${__GITIGNORE_FILE}") =~ ${__IGNORE_ENTRY} ]]; then
+    echo "${__IGNORE_ENTRY}" >> "${__GITIGNORE_FILE}"
+fi
 
 # mv file dam.LICENSE to .tools/.dam directory
-__LICENSE_FILE="dam.LICENSE"
-__LICENSE_DEST=".tools/.dam"
+__LICENSE_DEST="${__DAM_DIR}"
 if [ -f "${__LICENSE_FILE}" ]; then
     mv -fv "${__LICENSE_FILE}" "${__LICENSE_DEST}"
+fi
+
+# mv var.Makefile file to .make directory
+if [ -f "${__VAR_MAKEFILE_SRC}" ]; then
+    mv -fv "${__VAR_MAKEFILE_SRC}" "${__VAR_MAKEFILE_DEST}"
 fi
 
 # delete this file
