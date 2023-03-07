@@ -20,11 +20,6 @@ _SH_DIR=${_DAM_ROOT}/${_DN_SH}
 # Include core
 include $(wildcard $(_CORE_DIR)/*.Makefile)
 
-# Include tests if any
-ifneq ("$(wildcard $(_TEST_DIR)/*.Makefile)","")
-  include $(wildcard $(_TEST_DIR)/*.Makefile)
-endif
-
 # Include project if any
 ifneq ("$(wildcard $(_PROJECT_DIR)/project.Makefile)","")
   include $(_PROJECT_DIR)/project.Makefile
@@ -38,6 +33,11 @@ endif
 # Include var if any
 ifneq ("$(wildcard $(_VAR_FILE))","")
   include $(_VAR_FILE)
+endif
+
+# Include tests if any
+ifneq ("$(wildcard $(_TEST_DIR)/*.Makefile)","")
+  include $(wildcard $(_TEST_DIR)/*.Makefile)
 endif
 
 ## ——————————————————————————————— #️⃣  Makefile #️⃣  ——————————————————————————————
