@@ -52,6 +52,7 @@ common_read_option () {
                     console_fatal "Option is not applicable"
                 fi
                 debug_option "${__OPTION}" "${__VALUE}"
+                _pts_upgrade_run "${__VALUE}"
                 exit
                 ;;
             -V | --version)
