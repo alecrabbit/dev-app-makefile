@@ -53,7 +53,8 @@ common_read_option () {
                 fi
                 debug_option "${__OPTION}" "${__VALUE}"
                 if ! _pts_upgrade_run "${__VALUE}"; then
-                    exit 1;
+                    console_error "Upgrade failed"
+                    exit "${CR_ERROR}"
                 fi
                 exit
                 ;;
