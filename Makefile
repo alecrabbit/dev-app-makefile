@@ -1,10 +1,8 @@
 # Root directory
-_DN_ROOT=.tools
+_DN_TOOLS=.tools
 # DAM directory
 _DN_DAM=.dam
 
-# Shell scripts directory
-_DN_SH=.sh
 
 # Include core
-include ./${_DN_ROOT}/${_DN_DAM}/core.Makefile
+include ./${_DN_TOOLS}/${_DN_DAM}/core.Makefile

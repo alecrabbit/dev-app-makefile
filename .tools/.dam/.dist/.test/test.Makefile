@@ -15,7 +15,8 @@ _dt_echo_variables:
 	@${_ECHO} "_DOCKER           = ${_DOCKER}";
 	@${_ECHO} "_DOCKER_COMP      = ${_DOCKER_COMP}";
 	@${_ECHO} "_DC_EXEC          = ${_DC_EXEC}";
-	@${_ECHO} "_SYS_DIR          = ${_PWD_DIR}";
+	@${_ECHO} "_PWD_DIR          = ${_PWD_DIR}";
+	@${_ECHO} "_ROOT_DIR         = ${_ROOT_DIR}";
 	@${_ECHO} "_DAM_ROOT         = ${_DAM_ROOT}";
 	@${_ECHO} "_MAKE_ROOT        = ${_MAKE_ROOT}";
 	@${_ECHO} "_BIN_DIR          = ${_BIN_DIR}";
