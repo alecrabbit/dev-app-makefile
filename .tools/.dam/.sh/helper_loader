@@ -48,6 +48,7 @@ console_debug "Script name: ${SCRIPT_NAME}"
 console_debug "Script dir: ${SCRIPT_DIR}"
 console_debug "Lib dir: ${LIB_DIR}"
 console_debug "Work dir: ${WORK_DIR}"
+console_debug "Root dir: ${ROOT_DIR}"
 
 console_debug "Common modules dir: ${COMMON_MODULES_DIR}"
 console_debug "Core modules dir: ${CORE_MODULES_DIR}"
