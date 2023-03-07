@@ -11,4 +11,4 @@ fi
 
 # delete this file
 echo "Deleting ${0}"
-#rm "${0}"
+rm -v "${0}"
