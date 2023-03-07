@@ -8,4 +8,5 @@ _do_dam_update_message:
 
 _do_dam_update:
 	@$(eval c ?=)
-	DEBUG=1 ${_SH_DIR}/update.sh --debug --upgrade=$(c) && ./install
+	DEBUG=1 ${_SH_DIR}/update.sh --debug --upgrade=$(c)
+	./install
