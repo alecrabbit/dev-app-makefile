@@ -135,6 +135,7 @@ __updater_install () {
         console_debug "Deleting old version dir '${__old_dir}'\n$(rm -vfr "${__old_dir}" 2>&1)"
         console_debug "Deleting package LICENSE file\n$(rm -v "${__dir}/${__package}-${__version}/LICENSE")"
         console_debug "Deleting package README file\n$(rm -v "${__dir}/${__package}-${__version}/README.md")"
+        console_debug "Deleting package .make dir\n$(rm -rfv "${__dir}/${__package}-${__version}/.make")"
         console_debug "Copying new files to '${__dest_dir}'\n$(cp -rv "${__dir}/${__package}-${__version}"/. "${__dest_dir}"/. 2>&1)"
         # shellcheck disable=SC2116
         console_debug "Writing new build ${__build} to file ${BUILD_FILE}$(echo "${__build}" > "${BUILD_FILE}" 2>&1)"
