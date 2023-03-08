@@ -15,7 +15,7 @@ git_stash:
 
 git_add_all_n_commit:
 	git add -A
-	git commit -m "$(or $(DEFAULT_COMMIT_MESSAGE),WP)"
+	git commit -m "$(or $(DEFAULT_COMMIT_MESSAGE),wip)"
 
 git_push:
 	git push
