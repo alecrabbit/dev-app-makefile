@@ -141,7 +141,7 @@ __updater_install () {
         # shellcheck disable=SC2116
         console_debug "Writing new version ${__version} to file ${VERSION_FILE}$(echo "${__version}" > "${VERSION_FILE}" 2>&1)"
         console_debug "Cleanup '${__dir}'\n$(rm -rfv "${__dir}" 2>&1)"
-        console_print "${SCRIPT_VERSION}$(colored_dark "@${SCRIPT_BUILD}") -> ${EMOJI_NEW}${__version}$(colored_dark "${__build}")"
+        console_print "${SCRIPT_VERSION}$(colored_dark "@${SCRIPT_BUILD}") -> ${EMOJI_NEW}${__version}$(colored_dark "@${__build}")"
         console_info "Update complete"
         unset __dir __version __result __package __repository
         return "${CR_TRUE}"
