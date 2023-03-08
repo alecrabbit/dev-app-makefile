@@ -12,6 +12,7 @@ _dt_dist_test: _dt_echo_variables _dt_color_check _dt_user _dt_wildcard_files
 
 _dt_echo_variables:
 	@${_ECHO} "\n${_C_COMMENT}Variables: ${_C_STOP}";
+	@${_ECHO} "GLOBAL_DEBUG      = ${GLOBAL_DEBUG}";
 	@${_ECHO} "_DOCKER           = ${_DOCKER}";
 	@${_ECHO} "_DOCKER_COMP      = ${_DOCKER_COMP}";
 	@${_ECHO} "_DC_EXEC          = ${_DC_EXEC}";
@@ -33,7 +34,7 @@ _dt_echo_variables:
 	@${_ECHO} "_UNINSTALL_DIR    = ${_UNINSTALL_DIR}";
 	@${_ECHO} "_INITS_DIR        = ${_INITS_DIR}";
 
-	@${_ECHO} "_VAR_FILE       = ${_VAR_FILE}";
+	@${_ECHO} "_VAR_FILE         = ${_VAR_FILE}";
 
 _dt_user:
 	@${_ECHO} "\n${_C_COMMENT}User: ${_C_STOP}";

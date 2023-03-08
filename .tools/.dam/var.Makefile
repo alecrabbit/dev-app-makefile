@@ -4,16 +4,25 @@ else
     include $(_ENV_FILE) # to include environment variables
 endif
 
-#GLOBAL_DEBUG=1
-
-PROJECT_NAME=project.name
-PROJECT_SHORT_TITLE=✨
+GLOBAL_DEBUG=0
 
 # Git related variables
 WORKING_BRANCH=dev
-DEFAULT_COMMIT_MESSAGE=~wp
+COMMIT_MESSAGE=~wp
 
-# Docker compose files
+# Docker compose files (uncomment to use dev file)
+_FILES = \
+	-f ${_DOCKER_COMPOSE_FILE} \
+#	-f docker-compose.dev.${_DC_EXTENSION} \
 
-# _FILES = -f ${_DOCKER_COMPOSE_FILE} -f docker-compose.override.${_DC_EXTENSION}
-_FILES = -f ${_DOCKER_COMPOSE_FILE}
+#PROJECT_NAME=project.name
+#PROJECT_SHORT_TITLE=✨
+
+# ------------------------------------------------------------------------------
+# Your variables here
+#APP_CONTAINER=app
+#COMPOSER_CONTAINER=app
+# # COMPOSER_CONTAINER=composer
+#DUMPER_CONTAINER=${APP_CONTAINER}
+#APP_DIR=.
+#APP_PROJECT_NAME=${PROJECT_NAME}
