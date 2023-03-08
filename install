@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 
+echo "Running ${0}"
+
 __MAKE_DIR=".make"
 __DAM_DIR=".tools/.dam" # [353330be-f4c8-4ed0-9ed8-16963dbbbe0f]
 __GITIGNORE_FILE=".gitignore"
 
 if [ ! -d "${__MAKE_DIR}" ]; then
     mkdir "${__MAKE_DIR}"
-    shopt -s dotglob && cp -rv ./${__DAM_DIR}/.dist/"${__MAKE_DIR}"/* "${__MAKE_DIR}" && shopt -u dotglob
+    echo "Copying files './${__DAM_DIR}/.dist/${__MAKE_DIR}/*' '${__MAKE_DIR}'"
+    shopt -s dotglob && cp -rv "./${__DAM_DIR}/.dist/${__MAKE_DIR}/*" "${__MAKE_DIR}" && shopt -u dotglob
 fi
 
 # create .gitignore if it doesn't exist
