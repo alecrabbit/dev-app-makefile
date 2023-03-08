@@ -4,22 +4,11 @@ echo "Running ${0}"
 
 __MAKE_DIR=".make"
 __DAM_DIR=".tools/.dam" # [353330be-f4c8-4ed0-9ed8-16963dbbbe0f]
-__GITIGNORE_FILE=".gitignore"
 
 if [ ! -d "${__MAKE_DIR}" ]; then
     mkdir "${__MAKE_DIR}"
     echo "Copying files './${__DAM_DIR}/.dist/${__MAKE_DIR}/*' '${__MAKE_DIR}'"
     shopt -s dotglob && cp -rv ./"${__DAM_DIR}/.dist/${__MAKE_DIR}"/* "${__MAKE_DIR}" && shopt -u dotglob
-fi
-
-# create .gitignore if it doesn't exist
-if [ ! -f "${__GITIGNORE_FILE}" ]; then
-    touch "${__GITIGNORE_FILE}"
-fi
-# add ignore entry to .gitignore
-__IGNORE_ENTRY="/${__DAM_DIR}/"
-if [[ ! $(cat "${__GITIGNORE_FILE}") =~ ${__IGNORE_ENTRY} ]]; then
-    echo "${__IGNORE_ENTRY}" >> "${__GITIGNORE_FILE}"
 fi
 
 # delete this file
