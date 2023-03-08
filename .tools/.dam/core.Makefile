@@ -13,9 +13,10 @@ _DN_SH=.sh
 _ROOT_DIR=${_PWD_DIR}
 _TOOLS_DIR=${_ROOT_DIR}/${_DN_TOOLS}
 _DAM_ROOT=${_TOOLS_DIR}/${_DN_DAM}
+_BIN_DIR=${_DAM_ROOT}/${_DN_BIN}
 _MAKE_ROOT=${_ROOT_DIR}/${_DN_MAKE}
 _CORE_DIR=${_DAM_ROOT}/${_DN_CORE}
-_SH_DIR=${_DAM_ROOT}/${_DN_SH}
+_SH_DIR=${_BIN_DIR}/${_DN_SH}
 
 # Include core
 include $(wildcard $(_CORE_DIR)/*.Makefile)

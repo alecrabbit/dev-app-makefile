@@ -18,7 +18,7 @@ _DN_APP=app
 _DN_PROJECT=project
 _DN_TEST=.test
 
-_BIN_DIR=${_DAM_ROOT}/${_DN_BIN}
+
 _TIMED_DIR=${_BIN_DIR}/${_DN_TIMED}
 _TITLE_DIR=${_BIN_DIR}/${_DN_TITLE}
 _DIST_DIR=${_DAM_ROOT}/${_DN_DIST}
