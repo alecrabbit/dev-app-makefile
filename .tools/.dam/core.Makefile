@@ -4,6 +4,8 @@ SHELL=/bin/bash
 
 NOW=$(shell date +"%Y-%m-%dT%H%M%S")
 _PWD_DIR=$(shell pwd)
+
+# Core directory
 _DN_CORE=.core
 # Makefiles directory
 _DN_MAKE=.make
