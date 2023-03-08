@@ -35,9 +35,11 @@ ifneq ("$(wildcard $(_INCLUDE_DIR)/*.Makefile)","")
   include $(wildcard $(_INCLUDE_DIR)/*.Makefile)
 endif
 
-# Include tests if any
-ifneq ("$(wildcard $(_TEST_DIR)/*.Makefile)","")
-  include $(wildcard $(_TEST_DIR)/*.Makefile)
+# Include tests if any and if enabled
+ifeq ($(GLOBAL_DEBUG), 1)
+  ifneq ("$(wildcard $(_TEST_DIR)/.Makefile)","")
+    include $(wildcard $(_TEST_DIR)/.Makefile)
+  endif
 endif
 
 ## ——————————————————————————————— #️⃣  Makefile #️⃣  ——————————————————————————————
