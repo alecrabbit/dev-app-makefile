@@ -63,6 +63,7 @@ SCRIPT_VERSION="$(version_load_version "${VERSION_FILE}")"
 SCRIPT_BUILD="$(version_load_build "${BUILD_FILE}")"
 
 console_debug "Modules loaded"
+console_debug "Script version: ${SCRIPT_VERSION}@${SCRIPT_BUILD}"
 
 TERM_TITLE="$(core_get_title_from_file "${WORK_DIR}/TERMINAL_TITLE" "${WORK_DIR}")"
 
