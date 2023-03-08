@@ -1,4 +1,4 @@
-_initialize: _timer_start _message_initialize _full_init _timer_stop _time_init time_current project_info
+_initialize: _timer_start _message_initialize _full_init _timer_stop _time_init time_current info
 	@${_ECHO};
 	@${_ECHO_DONE};
 	@${_ECHO};
@@ -11,6 +11,7 @@ _message_initialize:
 
 
 _full_init: _title_from_file _project_clear_flags _project_install _docker_init _docker_up _project_init _project_set_flags _docker_ps _title_from_file
+	@${_NO_OP};
 
 _init_not_possible:
 	@${_ECHO} "\n ${_C_ERROR}  Initialization is not possible...  ${_C_STOP}\n";

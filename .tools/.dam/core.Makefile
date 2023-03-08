@@ -25,19 +25,25 @@ ifneq ("$(wildcard $(_PROJECT_DIR)/project.Makefile)","")
   include $(_PROJECT_DIR)/project.Makefile
 endif
 
-# Include includes if any
-ifneq ("$(wildcard $(_INCLUDE_DIR)/*.Makefile)","")
-  include $(wildcard $(_INCLUDE_DIR)/*.Makefile)
-endif
-
 # Include var if any
 ifneq ("$(wildcard $(_VAR_FILE))","")
   include $(_VAR_FILE)
 endif
 
-# Include tests if any
-ifneq ("$(wildcard $(_TEST_DIR)/*.Makefile)","")
-  include $(wildcard $(_TEST_DIR)/*.Makefile)
+# Include includes if any
+ifneq ("$(wildcard $(_INCLUDE_DIR)/*.Makefile)","")
+  include $(wildcard $(_INCLUDE_DIR)/*.Makefile)
+endif
+
+
+TESTS_ENABLED=true
+
+ifeq ($(TESTS_ENABLED), true)
+endif
+
+# Include tests if any and if enabled
+ifneq ("$(wildcard $(_TEST_DIR)/.Makefile)","")
+	include $(wildcard $(_TEST_DIR)/.Makefile)
 endif
 
 ## ——————————————————————————————— #️⃣  Makefile #️⃣  ——————————————————————————————
@@ -47,3 +53,4 @@ help: ## Outputs this help screen
 
 %:  ## unknown target
 	@${_ECHO} "\n${_C_ERROR}  ERROR  ${_C_STOP} Unknown target: ${_C_YELLOW}$@${_C_STOP}\n"
+
