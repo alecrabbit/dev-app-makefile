@@ -130,7 +130,7 @@ __updater_install () {
         console_comment "Installing package"
         console_debug "Deleting dev module '${PTS_AUX_DEV_MODULE}'\n$(rm -v "${__dir}/${__package}-${__version}/${PTS_AUX_DEV_MODULE}" 2>&1)"
         __old_dir="${__dest_dir}/${__DAM_DIR}"
-        __old_build=$(cat "${__old_dir}/${BUILD_FILE}" 2>/dev/null)
+        __old_build=$(cat "${BUILD_FILE}" 2>/dev/null)
         console_debug "Build: '${__old_build}'"
         console_debug "Deleting old version dir '${__old_dir}'\n$(rm -vfr "${__old_dir}" 2>&1)"
         console_debug "Copying new files to '${__dest_dir}'\n$(cp -rv "${__dir}/${__package}-${__version}"/. "${__dest_dir}"/. 2>&1)"
