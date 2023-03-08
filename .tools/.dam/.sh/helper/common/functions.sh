@@ -124,6 +124,7 @@ __updater_install () {
     then
         __build=$(get_short_commit_id "${__repository}" "${__version}")
         console_debug "Download complete"
+        console_debug "Destination dir: '${__dest_dir}'"
         # shellcheck disable=SC2116
         console_debug "Writing new build ${__build} to file ${BUILD_FILE}$(echo "${__build}" > "${BUILD_FILE}" 2>&1)"
         console_comment "Installing package"
