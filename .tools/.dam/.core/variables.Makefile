@@ -83,4 +83,4 @@ _ENV_FILE_COMMENT=\# Project-specific environment variables
 PROJECT_NAME=<undefined>
 PROJECT_SHORT_TITLE=🚀
 
-DEFAULT_COMMIT_MESSAGE=Set message variable or add DEFAULT_COMMIT_MESSAGE='your message' to the make command. For example: make save DEFAULT_COMMIT_MESSAGE='My commit message'
+COMMIT_MESSAGE=Set message variable or add COMMIT_MESSAGE='your message' to make command. For example: make save COMMIT_MESSAGE='My commit message'
