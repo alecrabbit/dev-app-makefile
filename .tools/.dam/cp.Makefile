@@ -1,4 +1,4 @@
-cp: _cp_license _cp_readme
+cp: _cp_license _cp_readme ## Copy license and readme files
 	@${_NO_OP};
 
 _cp_license:

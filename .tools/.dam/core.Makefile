@@ -21,6 +21,11 @@ _SH_DIR=${_BIN_DIR}/${_DN_SH}
 # Include core
 include $(wildcard $(_CORE_DIR)/*.Makefile)
 
+# Include cp.Makefile if present
+ifneq ("$(wildcard $(_CP_FILE))","")
+  include $(_CP_FILE)
+endif
+
 # Include project if any
 ifneq ("$(wildcard $(_PROJECT_DIR)/project.Makefile)","")
   include $(_PROJECT_DIR)/project.Makefile
@@ -34,11 +39,6 @@ endif
 # Include includes if any
 ifneq ("$(wildcard $(_INCLUDE_DIR)/*.Makefile)","")
   include $(wildcard $(_INCLUDE_DIR)/*.Makefile)
-endif
-
-# Include cp.Makefile if present
-ifneq ("$(wildcard $(_CP_FILE))","")
-  include $(_CP_FILE)
 endif
 
 # Include tests if any and if enabled
