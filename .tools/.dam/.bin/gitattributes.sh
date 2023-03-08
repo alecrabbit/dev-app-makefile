@@ -32,8 +32,8 @@ echo -e "IGNORES:\n${IGNORES[*]}\n"
 # Get the contents of the directory and sort them alphabetically
 CONTENTS=$(find "$DIRECTORY" -mindepth 1 -maxdepth 1 -exec basename {} \; | sort)
 
-# Create an empty file
-> "$FILE"
+# Create file from a template
+cp "$DIRECTORY/.gitattributes.dist" "$FILE"
 
 # Loop over each file or directory in the contents
 while read -r item; do

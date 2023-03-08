@@ -1,5 +1,6 @@
+.tools/.dam/cp.Makefile
 .gitattributes export-ignore
+.gitattributes.dist export-ignore
 .gitattributes.keep export-ignore
 .gitignore export-ignore
-.make/ export-ignore
 TERMINAL_TITLE export-ignore
