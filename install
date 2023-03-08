@@ -6,7 +6,7 @@ __GITIGNORE_FILE=".gitignore"
 
 if [ ! -d "${__MAKE_DIR}" ]; then
     mkdir "${__MAKE_DIR}"
-    shopt -s dotglob && cp -rv ./.tools/.dam/.dist/"${__MAKE_DIR}"/* "${__MAKE_DIR}" && shopt -u dotglob
+    shopt -s dotglob && cp -rv ./${__DAM_DIR}/.dist/"${__MAKE_DIR}"/* "${__MAKE_DIR}" && shopt -u dotglob
 fi
 
 # create .gitignore if it doesn't exist

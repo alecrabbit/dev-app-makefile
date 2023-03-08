@@ -133,7 +133,8 @@ __updater_install () {
         __old_build=$(cat "${BUILD_FILE}" 2>/dev/null)
         console_debug "Build: '${__old_build}'"
         console_debug "Deleting old version dir '${__old_dir}'\n$(rm -vfr "${__old_dir}" 2>&1)"
-        console_debug "Renaming README file\n$(mv "${__dir}/${__package}-${__version}/README.md" "${__dir}/${__package}-${__version}/dam.README.md")"
+        console_debug "Deleting package LICENCE file\n$(rm -v "${__dir}/${__package}-${__version}/LICENCE")"
+        console_debug "Deleting package README file\n$(rm -v "${__dir}/${__package}-${__version}/README.md")"
         console_debug "Copying new files to '${__dest_dir}'\n$(cp -rv "${__dir}/${__package}-${__version}"/. "${__dest_dir}"/. 2>&1)"
         # shellcheck disable=SC2116
         console_debug "Writing new build ${__build} to file ${BUILD_FILE}$(echo "${__build}" > "${BUILD_FILE}" 2>&1)"
