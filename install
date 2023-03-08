@@ -3,6 +3,7 @@
 __MAKE_DIR=".make"
 __DAM_DIR=".tools/.dam"
 __LICENSE_FILE="dam.LICENSE"
+__README_FILE="README.md"
 __GITIGNORE_FILE=".gitignore"
 __VAR_MAKEFILE="var.Makefile"
 __VAR_MAKEFILE_SRC="${__DAM_DIR}/${__VAR_MAKEFILE}"
@@ -28,9 +29,12 @@ if [[ ! $(cat "${__GITIGNORE_FILE}") =~ ${__IGNORE_ENTRY} ]]; then
 fi
 
 # mv file dam.LICENSE to .tools/.dam directory
-__LICENSE_DEST="${__DAM_DIR}"
+__DEST="${__DAM_DIR}"
 if [ -f "${__LICENSE_FILE}" ]; then
-    mv -fv "${__LICENSE_FILE}" "${__LICENSE_DEST}"
+    mv -fv "${__LICENSE_FILE}" "${__DEST}"
+fi
+if [ -f "${__README_FILE}" ]; then
+    mv -fv "${__README_FILE}" "${__DEST}"
 fi
 
 # delete this file
