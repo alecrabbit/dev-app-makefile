@@ -1,5 +1,5 @@
 .gitattributes export-ignore
 .gitattributes.keep export-ignore
 .gitignore export-ignore
-/.make/ export-ignore
+.make/ export-ignore
 TERMINAL_TITLE export-ignore
