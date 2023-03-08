@@ -38,6 +38,7 @@ if [ -f "$DIRECTORY/.gitattributes.dist" ]; then
   cp "$DIRECTORY/.gitattributes.dist" "$FILE"
 else
   # Create an empty file
+  echo "Creating empty $FILE"
   : > "$FILE"
 fi
 

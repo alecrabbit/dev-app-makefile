@@ -133,6 +133,7 @@ __updater_install () {
         __old_build=$(cat "${BUILD_FILE}" 2>/dev/null)
         console_debug "Build: '${__old_build}'"
         console_debug "Deleting old version dir '${__old_dir}'\n$(rm -vfr "${__old_dir}" 2>&1)"
+        console_debug "Deleting package cp.Makefile file\n$(rm -v "${__dir}/${__package}-${__version}/${__DAM_DIR}/cp.Makefile")"
         console_debug "Deleting package LICENSE file\n$(rm -v "${__dir}/${__package}-${__version}/LICENSE")"
         console_debug "Deleting package README file\n$(rm -v "${__dir}/${__package}-${__version}/README.md")"
         console_debug "Deleting package .make dir\n$(rm -rfv "${__dir}/${__package}-${__version}/.make")"
