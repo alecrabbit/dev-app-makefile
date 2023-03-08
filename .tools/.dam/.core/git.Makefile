@@ -15,7 +15,7 @@ git_stash:
 
 git_add_all_n_commit:
 	git add -A
-	git commit -m "$(or $(DEFAULT_COMMIT_MESSAGE),WP-0000: Default commit message. Please change this message in the Makefile. To do so, add DEFAULT_COMMIT_MESSAGE='your message' to the make command. For example: make save DEFAULT_COMMIT_MESSAGE='My commit message')"
+	git commit -m "$(or $(DEFAULT_COMMIT_MESSAGE),<no message>)"
 
 git_push:
 	git push

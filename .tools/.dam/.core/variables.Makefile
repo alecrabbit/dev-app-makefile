@@ -83,4 +83,4 @@ PROJECT_NAME=project.name
 PROJECT_SHORT_TITLE=🚀
 
 WORKING_BRANCH=dev
-#DEFAULT_COMMIT_MESSAGE=wip
+DEFAULT_COMMIT_MESSAGE=Default commit message. Please set message in Makefile. Or add DEFAULT_COMMIT_MESSAGE='your message' to the make command. For example: make save DEFAULT_COMMIT_MESSAGE='My commit message'
