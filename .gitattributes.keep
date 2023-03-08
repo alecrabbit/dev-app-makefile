@@ -1,4 +1,5 @@
 .tools/
 Makefile
-dam.LICENSE
+LICENSE
 install
+README.md
