@@ -80,7 +80,7 @@ _ENV_DIST_FILE=.env.dist
 _ENV_FILE_COMMENT=\# Project-specific environment variables
 
 # Project variables overridable in other files
-PROJECT_NAME=default.project.name
+PROJECT_NAME=<undefined>
 PROJECT_SHORT_TITLE=🚀
 
 DEFAULT_COMMIT_MESSAGE=Set message variable or add DEFAULT_COMMIT_MESSAGE='your message' to the make command. For example: make save DEFAULT_COMMIT_MESSAGE='My commit message'
