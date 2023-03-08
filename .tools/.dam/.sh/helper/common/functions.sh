@@ -3,7 +3,7 @@
 SCRIPT_START_TIME=$(date +%s)
 export SCRIPT_START_TIME
 
-__DAM_DIR=".tools/.dam"
+__DAM_DIR=".tools/.dam" # [353330be-f4c8-4ed0-9ed8-16963dbbbe0f]
 
 func_check_user () {
     console_debug "Checking user: $(whoami)"
