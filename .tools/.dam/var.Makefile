@@ -4,7 +4,7 @@ else
     include $(_ENV_FILE) # to include environment variables
 endif
 
-#GLOBAL_DEBUG=0
+GLOBAL_DEBUG=0
 
 PROJECT_NAME=project.name
 PROJECT_SHORT_TITLE=✨
