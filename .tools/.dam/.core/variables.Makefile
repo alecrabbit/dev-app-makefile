@@ -81,3 +81,6 @@ _ENV_FILE_COMMENT=\# Project-specific environment variables
 # Project variables overridable in other files
 PROJECT_NAME=project.name
 PROJECT_SHORT_TITLE=🚀
+
+WORKING_BRANCH=dev
+#DEFAULT_COMMIT_MESSAGE=wip
