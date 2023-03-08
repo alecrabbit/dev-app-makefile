@@ -42,7 +42,7 @@ _DOCKER_COMP = $(shell command -v docker-compose 2> /dev/null)
 
 _TERMINAL_TITLE_FILE=TERMINAL_TITLE
 
-# Makefile to use for help output
+# Makefile to use for help output // todo DEPRECATED!
 _MAKEFILE = Makefile
 
 _VAR_FILE_NAME=var.Makefile
@@ -57,6 +57,7 @@ _VAR_DIST_CP_FILE=${_DIST_CP_DIR}/${_VAR_DIST_FILE_NAME}
 
 _VAR_UNINSTALL_FILE=${_UNINSTALL_DIR}/${_VAR_FILE_NAME}
 
+# // todo DEPRECATED!
 _MAIN_MAKEFILE=main.${_MAKEFILE}
 _INSTALL_MAKEFILE=dist.install.${_MAKEFILE}
 _MAIN_DIST_MAKEFILE=${_DIST_CP_DIR}/${_MAIN_MAKEFILE}
@@ -82,5 +83,4 @@ _ENV_FILE_COMMENT=\# Project-specific environment variables
 PROJECT_NAME=project.name
 PROJECT_SHORT_TITLE=🚀
 
-WORKING_BRANCH=dev
-DEFAULT_COMMIT_MESSAGE=Default commit message. Please set message in Makefile. Or add DEFAULT_COMMIT_MESSAGE='your message' to the make command. For example: make save DEFAULT_COMMIT_MESSAGE='My commit message'
+DEFAULT_COMMIT_MESSAGE=Set message variable or add DEFAULT_COMMIT_MESSAGE='your message' to the make command. For example: make save DEFAULT_COMMIT_MESSAGE='My commit message'
