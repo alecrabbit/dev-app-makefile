@@ -22,7 +22,7 @@ endif
 
 __DAM_URL="https://github.com/alecrabbit/dev-app-makefile"
 
-do_install_dam_tool:
+install_dam_tool:
 	@echo -e "Installing DAM tool...\n";
 	@wget -qO- "${__DAM_URL}/archive/refs/heads/dev.tar.gz" | tar -xz \
 	 && shopt -s dotglob && cp -r dev-app-makefile-dev/* . && shopt -u dotglob \
