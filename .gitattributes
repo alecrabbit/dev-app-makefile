@@ -3,4 +3,6 @@ CHANGELOG.md export-ignore
 .gitattributes export-ignore
 .gitattributes.keep export-ignore
 .gitignore export-ignore
+LICENSE export-ignore
+README.md export-ignore
 TERMINAL_TITLE export-ignore
