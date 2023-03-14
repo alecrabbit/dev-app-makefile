@@ -2,6 +2,7 @@
 # # ‼️            STOP           ‼️
 # # ‼️ DO **NOT** EDIT THIS FILE ‼️
 # # #
+# # https://github.com/alecrabbit/dev-app-makefile
 
 # Project: DAM tool
 SHELL=/bin/bash
