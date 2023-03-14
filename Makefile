@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-.DEFAULT_GOAL=do_dam_tool_help
+.DEFAULT_GOAL=do_help_dam_tool
 # Root directory
 _DN_TOOLS=.tools
 # DAM directory
