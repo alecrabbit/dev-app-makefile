@@ -7,7 +7,7 @@
 SHELL=/bin/bash
 .DEFAULT_GOAL=help_dam_tool
 
-# Root directory
+# Root(Tools) directory
 _DN_TOOLS=.tools
 # DAM directory
 _DN_DAM=.dam
