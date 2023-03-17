@@ -1,4 +1,6 @@
-git_ignore_fix:
+##
+## —— git 📇 ———————————————————————————————————————————————————————————————————
+git_ignore_fix: ## Fix .gitignore issues
 	git rm -r --cached .
 	git add .
 	git commit -m ".gitignore fix"
@@ -13,14 +15,14 @@ git_stash_pop:
 git_stash:
 	git stash
 
-git_add_all_n_commit:
+git_add_all_n_commit: ## Add all and commit
 	git add -A
 	git commit -m "$(or $(COMMIT_MESSAGE),<no message>)"
 
 git_push:
 	git push
 
-git_checkout:
+git_checkout: ## Checkout to working branch
 	git checkout $(or $(WORKING_BRANCH),dev)
 
 git_pull:
