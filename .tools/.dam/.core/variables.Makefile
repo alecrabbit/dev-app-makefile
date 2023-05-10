@@ -85,3 +85,5 @@ PROJECT_NAME=<undefined>
 PROJECT_SHORT_TITLE=🚀
 
 COMMIT_MESSAGE=Set message variable or add COMMIT_MESSAGE='your message' to make command. For example: make save COMMIT_MESSAGE='My commit message'
+
+COMPOSER_HOME=/home/user/.composer
