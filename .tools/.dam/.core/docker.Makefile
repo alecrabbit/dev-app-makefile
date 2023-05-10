@@ -17,7 +17,7 @@ _docker_pull:
 
 _docker_build:
 	@${_ECHO} "\n${_C_INFO} Building containers...${_C_STOP}\n";
-	@${_DC_STACK} build
+	${_DC_STACK} build --build-arg COMPOSER_HOME=${COMPOSER_HOME}
 
 _docker_build_no_cache:
 	@${_ECHO} "\n${_C_INFO} Building containers...${_C_STOP}\n";
