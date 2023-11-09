@@ -70,7 +70,7 @@ restart: _docker_down _docker_up time_current ## Restart the docker hub
 ps: _docker_ps time_current ## List all running containers
 	@${_NO_OP};
 
-clear: _docker_down_clear cleanup time_current ## Stop the docker hub, remove volumes and cleanup the project
+clear: _docker_down_clear time_current ## Stop the docker hub, remove volumes
 	@${_NO_OP};
 
 cleanup: _do_project_cleanup ## Do project cleanup
