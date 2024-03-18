@@ -23,7 +23,7 @@ ifneq ("$(wildcard $(__CORE_FILE))","")
 endif
 
 __DAM_URL="https://github.com/alecrabbit/dev-app-makefile"
-__DAM_VERSION="0.0.34"
+__DAM_VERSION="0.0.36"
 
 install_dam_tool:
 	@echo -e "Installing DAM tool...\n";
