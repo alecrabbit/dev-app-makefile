@@ -1,8 +1,10 @@
 # # #
-# # ‼️            STOP           ‼️
-# # ‼️ DO **NOT** EDIT THIS FILE ‼️
+# #  ‼️            STOP           ‼️
+# #  ‼️ DO **NOT** EDIT THIS FILE ‼️
+# #
+# # Unless you KNOW what you're doing
 # # #
-# # https://github.com/alecrabbit/dev-app-makefile
+# # See https://github.com/alecrabbit/dev-app-makefile
 
 # Project: DAM tool
 SHELL=/bin/bash
@@ -21,12 +23,13 @@ ifneq ("$(wildcard $(__CORE_FILE))","")
 endif
 
 __DAM_URL="https://github.com/alecrabbit/dev-app-makefile"
+__DAM_VERSION="0.0.34"
 
 install_dam_tool:
 	@echo -e "Installing DAM tool...\n";
-	@wget -qO- "${__DAM_URL}/archive/refs/heads/main.tar.gz" | tar -xz \
-	 && shopt -s dotglob && cp -r dev-app-makefile-main/* . && shopt -u dotglob \
-	 && rm -r dev-app-makefile-main && ./install && make upgrade c=main
+	@wget -qO- "${__DAM_URL}/archive/refs/tags/${__DAM_VERSION}.tar.gz" | tar -xz \
+	 && shopt -s dotglob && cp -r dev-app-makefile-${__DAM_VERSION}/* . && shopt -u dotglob \
+	 && rm -r dev-app-makefile-${__DAM_VERSION} && ./install && make upgrade
 
 help_dam_tool:
 	@echo -e "DAM tool help:\n";
